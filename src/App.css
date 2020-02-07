@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+
+}
+.header-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: cadetblue;
+}
+.header-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+

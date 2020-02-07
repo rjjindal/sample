@@ -1,0 +1,20 @@
+.Login {
+    position: relative;
+    width: 100%;
+    display: table;
+}
+.login-form{
+
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    /* position: absolute; */
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25%;
+    margin-bottom: 25%;
+    background: aquamarine;
+}
+/* input {
+  width: 250px;  
+} */
