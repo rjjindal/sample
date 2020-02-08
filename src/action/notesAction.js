@@ -13,4 +13,9 @@ export  function AddNote (val)  {
         val,
         }
 }
+export function selectButton() {
+return {
+    type: 'SELECT_FLAG',
+}
+}
 

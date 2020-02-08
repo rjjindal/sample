@@ -6,7 +6,8 @@
 const initState = {
 data: [
     // {id: 0, title: 'test', content: 'abcd'}
-]
+],
+flag: false,
 }
 const rootReducer = (state = initState, action) => {
     console.log('check',action)
@@ -25,6 +26,12 @@ const rootReducer = (state = initState, action) => {
         return{
             ...state,
             data: addNote
+        }
+    }
+    if(action.type === 'SELECT_FLAG') {
+        return{
+            ...state,
+            flag: true,
         }
     }
     return state;

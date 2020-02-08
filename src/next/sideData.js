@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { AddNote } from '../action/notesAction';
 import { connect } from 'react-redux';
+import './next.css';
 
- class Main extends Component {
+class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,6 +28,8 @@ import { connect } from 'react-redux';
         event.preventDefault();
         this.setState({
             flag: false,
+            title: '',
+            content: '',
         })
     }
     handleSubmit(event) {
@@ -37,9 +40,11 @@ import { connect } from 'react-redux';
             })
             this.setState((state, props) => ({
                 flag: false,
-                count : state.count + 1
-                          }));
-            const dataaa = {id: this.state.count, title: this.state.title , content: this.state.content};
+                count: state.count + 1,
+                title: '',
+                content: '',
+            }));
+            const dataaa = { id: this.state.count, title: this.state.title, content: this.state.content };
             this.props.addNote(dataaa)
             console.log(dataaa)
         } else {
@@ -51,8 +56,8 @@ import { connect } from 'react-redux';
     }
     render() {
         return (<div>
-            <button onClick={this.addNote.bind(this)}>Add Notes</button>
-            {this.state.flag && <form onSubmit={this.handleSubmit.bind(this)}>
+            <button style={{ float: 'right', marginRight: '10px', marginTop: '20px' }} onClick={this.addNote.bind(this)}>Add Notes</button>
+            {this.state.flag && <form className="add-note-container" onSubmit={this.handleSubmit.bind(this)}>
                 <div>        <label>
                     Title:
           <textarea id="title" className="text-input" value={this.state.title} rows="1" onChange={this.handleChange} />
@@ -61,17 +66,17 @@ import { connect } from 'react-redux';
                     Body:
           <textarea id="content" value={this.state.body} rows="10" onChange={this.handleChange} />
                 </label></div>
-                <div>    <input type="submit" value="Submit" /> <input type="submit" value="Close" onClick={this.handleClose.bind(this)} /></div>
+                <div style={{ float: 'right' }}>    <input type="submit" value="Submit" /> <input type="submit" value="Close" onClick={this.handleClose.bind(this)} /></div>
                 <br /><span style={{ color: "red" }}>{this.state.error}</span>
             </form>}
         </div>)
     }
 }
-const mapStateToProps = () => {}
+const mapStateToProps = () => { }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addNote: (data) => { dispatch(AddNote(data))}
+        addNote: (data) => { dispatch(AddNote(data)) }
     }
 
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

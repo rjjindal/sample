@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+      <div className="App" style={{ height: window.innerHeight }}>
         <header className="header-app">
         {/* <p className="header-button"><Link to={'/'} className="nav-link"> Home </Link></p> */}
         <Header />
@@ -17,6 +17,7 @@ class App extends Component {
         </header>
         <Switch>
               <Route exact path='/login' component={Login} />
+              <Route exact path='/' component={Login} />
               <Route path='/next' component={Next} />
               <Route  render={() => <div>Not Found</div>} />
         </Switch>

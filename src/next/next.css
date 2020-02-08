@@ -1,0 +1,29 @@
+.add-note-container {
+    position: relative;
+    /* width: 100%; */
+    /* max-width: 600px; */
+    /* display: table; */
+    height: 100%;
+    /* margin: 2rem auto; */
+    padding: 2rem;
+}
+.left-list-container {
+   width: 30%;
+   height: 100%;
+   background: white;
+   border-right: 1px solid lightgray; 
+}
+.container-{
+    display: flex;
+    flex-Direction: row;
+     height: calc(100% - 53px);
+}
+.project-container{
+    height: calc(100% - 50px);
+}
+#title {
+    width: 100%;
+}
+#content {
+    width: 100%
+;}
